@@ -1,0 +1,17 @@
+#!/bin/bash
+
+help() {
+  echo "Usage:"
+  echo "  zmicro htop <args ...>"
+  echo ""
+}
+
+core() {
+  htop "$@"
+}
+
+run() {
+  core "$@"
+}
+
+run "$@"

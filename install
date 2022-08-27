@@ -1,0 +1,29 @@
+#!/bin/bash
+
+set -e
+
+help() {
+  echo "Usage:"
+  echo "  zmicro package install htop <args...>"
+  echo ""
+}
+
+install() {
+  pm install -y htop
+}
+
+core() {
+  if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
+    help
+    exit 0
+  fi
+
+  install
+  log::success "install htop success."
+}
+
+run() {
+  core $@
+}
+
+run $@
